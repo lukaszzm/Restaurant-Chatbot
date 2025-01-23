@@ -1,0 +1,38 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - restaurant_hours
+  - list_menu
+
+entities:
+  - datetime
+
+slots:
+  datetime:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: datetime
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to Tasty Bytes! How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! We hope to see you again soon!"
+  utter_ask_continue:
+    - text: "Would you like anything else?"
+  utter_restaurant_hours:
+    - text: "We're open from {open_time} to {close_time} on {day}."
+  utter_menu:
+    - text: "Here's our menu:\n{menu_items}"
+
+actions:
+  - action_check_opening_hours
+  - action_show_menu
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

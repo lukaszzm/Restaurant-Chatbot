@@ -1,0 +1,50 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - hii there
+    - helloo
+    - heyy
+    - sup
+    - yo
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - later
+    - cya
+    - goodbyee
+    - byee
+    - catch ya
+    - peace out
+
+- intent: restaurant_hours
+  examples: |
+    - Are you open [tomorrow]{"entity": "datetime"}?
+    - What time do you open on [Monday]{"entity": "datetime"}?
+    - Are you open [this weekend]{"entity": "datetime"}?
+    - When do yu close on [Fridays]{"entity": "datetime"}?
+    - Hours for [December 25th]{"entity": "datetime"}?
+    - Open [today]{"entity": "datetime"}?
+    - Are u opn [right now]{"entity": "datetime"}?
+    - What's your timing on [Tuesdays]{"entity": "datetime"}?
+    - Do you work [on christmas]{"entity": "datetime"}?
+
+- intent: list_menu
+  examples: |
+    - What's on the menu?
+    - Show me the menu
+    - What do you serve?
+    - List food options
+    - menue pls
+    - wat dishes u have
+    - show me the meny
+    - food choices?
+    - what can i order?
