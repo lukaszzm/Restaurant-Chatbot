@@ -1,21 +1,70 @@
 version: "3.1"
 
 stories:
-- story: greet and farewell
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: goodbye
-  - action: utter_goodbye
+  - story: Greet and exit
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: check opening hours
-  steps:
-  - intent: restaurant_hours
-  - action: action_check_opening_hours
-  - action: utter_ask_continue
+  - story: Ask about opening hours
+    steps:
+    - intent: opening_hours
+      entities:
+        - datetime: "Monday"
+    - action: action_check_opening_hours
+    - action: utter_ask_continue
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: view menu
-  steps:
-  - intent: list_menu
-  - action: action_show_menu
-  - action: utter_ask_continue
+  - story: Request menu
+    steps:
+    - intent: list_menu
+    - action: action_show_menu
+    - action: utter_ask_continue
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - story: Order
+    steps:
+      - intent: place_order
+      - action: action_handle_order
+      - action: utter_ask_confirm
+      - intent: confirm_order
+      - action: utter_order_complete
+      - action: utter_ask_continue
+
+  - story: Greet -> Hours -> Menu -> Order -> Bye
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: opening_hours
+      entities:
+      - datetime: "Tuesday"
+    - action: action_check_opening_hours
+    - action: utter_ask_continue
+    - intent: list_menu
+    - action: action_show_menu
+    - action: utter_ask_continue
+    - intent: place_order
+    - action: action_handle_order
+    - action: utter_ask_confirm
+    - intent: confirm_order
+    - action: utter_order_complete
+    - action: utter_ask_continue
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - story: Multiple requests
+    steps:
+    - intent: list_menu
+    - action: action_show_menu
+    - action: utter_ask_continue
+    - intent: opening_hours
+      entities:
+      - datetime: "Friday"
+    - action: action_check_opening_hours
+    - action: utter_ask_continue
+    - intent: goodbye
+    - action: utter_goodbye

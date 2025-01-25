@@ -1,3 +1,36 @@
 version: "3.1"
 
 rules:
+  - rule: Greet the user
+    steps:
+    - intent: greet
+    - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - rule: Handle opening hours
+    steps:
+    - intent: opening_hours
+    - action: action_check_opening_hours
+    - action: utter_ask_continue
+
+  - rule: Handle menu
+    steps:
+    - intent: list_menu
+    - action: action_show_menu
+    - action: utter_ask_continue
+
+  - rule: Handle order
+    steps:
+      - intent: place_order
+      - action: action_handle_order
+      - action: utter_ask_confirm
+
+  - rule: Handle confirm
+    steps:
+      - intent: confirm_order
+      - action: utter_order_complete
+      - action: utter_ask_continue

@@ -3,48 +3,260 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hi
-    - hello
-    - hey
-    - good morning
-    - hii there
-    - helloo
-    - heyy
-    - sup
-    - yo
+    - Hi there!
+    - Hello!
+    - Hey!
+    - Good morning!
+    - Good afternoon!
+    - Good evening!
+    - Hiya!
+    - Howdy!
+    - Greetings!
+    - Salutations!
+    - Hi, how can you help?
+    - Hey chatbot!
+    - Hello friend!
+    - Yo!
+    - What's up?
+    - How's it going?
+    - Nice to see you!
+    - Good day!
+    - Ahoy!
+    - Hi team!
+    - Hello delicious food lovers!
+    - Hey hungry people!
+    - Howdy partner!
+    - Hi, I'm ready to order!
+    - Hey there foodie!
+    - Good day, hungry human!
+    - Hi, what's cooking?
+    - Hello, any specials today?
+    - Hi, I need food recommendations!
+    - Hey, what's good here?
+    - Hiii! 👋
+    - Heyyy! 😊
+    - Helloooo!
+    - Sup?
+    - 'Yo!'
+    - G'day!
+    - How goes it?
+    - What's happening?
+    - How you doing?
+    - I'm hungry!
+    - Looking to order
+    - Ready to eat!
+    - Food time!
 
 - intent: goodbye
   examples: |
-    - bye
-    - goodbye
-    - see you
-    - later
-    - cya
-    - goodbyee
-    - byee
-    - catch ya
-    - peace out
+    - Bye!
+    - Goodbye!
+    - See you!
+    - Later!
+    - Cya!
+    - Catch you later!
+    - Peace out!
+    - Have a good one!
+    - Take care!
+    - Farewell!
+    - Until next time!
+    - Gotta go!
+    - Talk to you later!
+    - Signing off!
+    - Toodle-oo!
+    - Cheerio!
+    - Adiós!
+    - Au revoir!
+    - See ya!
+    - Laters!
+    - Bye for now!
+    - Later days!
+    - Smell ya later!
+    - Keep it real!
+    - Bye bye!
+    - See you next time!
+    - Enjoy your meal! 🍴
+    - Bon appétit! 👩🍳
+    - Till next craving! 🍔
+    - Stay hungry! 😋
+    - Later, alligator!
+    - After while, crocodile!
+    - Peace! ✌️
+    - Out!
+    - I'm done for now
+    - That's all thanks
+    - No more questions
+    - I'm all set
+    - Time to eat!
+    - Going to place my order
+    - Done chatting
+    - Talk later
+    - Bye chatbot!
+    - See you tomorrow!
+    - Have a great day!
+    - Enjoy your food!
+    - I'll be back for more!
+    - Till next time!
 
-- intent: restaurant_hours
+- intent: opening_hours
   examples: |
-    - Are you open [tomorrow]{"entity": "datetime"}?
-    - What time do you open on [Monday]{"entity": "datetime"}?
-    - Are you open [this weekend]{"entity": "datetime"}?
-    - When do yu close on [Fridays]{"entity": "datetime"}?
-    - Hours for [December 25th]{"entity": "datetime"}?
-    - Open [today]{"entity": "datetime"}?
-    - Are u opn [right now]{"entity": "datetime"}?
-    - What's your timing on [Tuesdays]{"entity": "datetime"}?
-    - Do you work [on christmas]{"entity": "datetime"}?
+    - What are your hours on [Monday](datetime)?
+    - When do you open on [Tuesday](datetime)?
+    - Closing time [Wednesday](datetime)?
+    - Are you open [Thursday](datetime)?
+    - [Friday](datetime) hours?
+    - [Saturday](datetime) opening times?
+    - [Sunday](datetime) schedule?
+    - What time do you close [Sundays](datetime)?
+    - [Monday](datetime) operating hours?
+    - When do you start service on [Tuesday](datetime)?
+    - Open late [Wednesday](datetime)?
+    - Early closing [Thursdays](datetime)?
+    - [Friday](datetime) availability?
+    - Weekend hours for [Saturday](datetime)?
+    - Work hours [Sunday](datetime)?
+    - [Monday](datetime) schedule?
+    - When do u open [Tuesday](datetime)?
+    - Close early on [Wednesdays](datetime)?
+    - What's the timing [Thursday](datetime)?
+    - [Friday](datetime) night hours?
+    - Saturday kitchen hours?
+    - Sunday brunch time?
+    - [Monday](datetime) dinner service?
+    - Lunch hours [Tuesday](datetime)?
+    - [Wednesday](datetime) evening schedule?
+    - [Thursday](datetime) afternoon opening?
+    - [Friday](datetime) happy hour times?
+    - [Saturday](datetime) closing?
+    - [Sunday](datetime) special hours?
+    - [Monday](datetime) morning open?
 
 - intent: list_menu
   examples: |
-    - What's on the menu?
-    - Show me the menu
-    - What do you serve?
-    - List food options
-    - menue pls
-    - wat dishes u have
-    - show me the meny
-    - food choices?
-    - what can i order?
+    - Can I see the menu?
+    - What's available to eat?
+    - Show me your offerings
+    - What dishes do you have?
+    - Menu please
+    - What's on offer?
+    - What's cooking today?
+    - List your food items
+    - What's served here?
+    - Show me your specialties
+    - What's good here?
+    - What's the food selection?
+    - Can I get the food list?
+    - Display the full menu
+    - Menu options?
+    - What do you offer?
+    - What's on your kitchen menu?
+    - Food catalogue please
+    - Let me see the dishes
+    - What can I eat here?
+    - What's your signature dish?
+    - Any specials today?
+    - What's tasty here?
+    - What's your current menu?
+    - What's the chef recommending?
+    - Menu card?
+    - What's your specialty?
+    - Food menu plz
+    - Show me the eats
+    - Wat's on da menu?
+    - List ur bestsellers
+    - What grub you got?
+    - Can u show the meny?
+    - What's cookin' good lookin'?
+    - Let's see the food lineup
+    - What are my options?
+    - What's available to order?
+    - Dessert options?
+    - Appetizer list?
+    - Main course selection?
+    - Hungry - show menu!
+    - 🍔 What's available? 🍟
+    - 🍕 Menu?
+    - I want to see food options
+    - Need to know your dishes
+    - Display all menu items
+
+- intent: place_order
+  examples: |
+    - I want to order [2](quantity) [Burgers](menu_item) [without tomatoes](modifier)
+    - Can I get [1](quantity) [Pizza](menu_item) [gluten-free](modifier)?
+    - I’d like to have [3](quantity) [Tacos](menu_item) [extra spicy](modifier)
+    - Please bring me [4](quantity) [Sushi Rolls](menu_item) [with soy sauce](modifier)
+    - I need [2](quantity) [Salads](menu_item) [no dressing](modifier)
+    - Let me order [1](quantity) [Steak](menu_item) [medium-rare](modifier)
+    - I’ll take [5](quantity) [Spring Rolls](menu_item) [vegetarian](modifier)
+    - Give me [2](quantity) [Milkshakes](menu_item) [with almond milk](modifier)
+    - I want [3](quantity) [Pasta](menu_item) [no cheese](modifier)
+    - Can you prepare [1](quantity) [Burger](menu_item) [well-done](modifier)?
+    - I’d like [4](quantity) [Dumplings](menu_item) [steamed](modifier)
+    - I need [2](quantity) [Coffees](menu_item) [with oat milk](modifier)
+    - Let’s do [6](quantity) [Cookies](menu_item) [sugar-free](modifier)
+    - Bring me [1](quantity) [Sandwich](menu_item) [no mayo](modifier)
+    - I want to order [3](quantity) [Fries](menu_item) [extra crispy](modifier)
+    - Can I have [2](quantity) [Smoothies](menu_item) [with protein powder](modifier)?
+    - I’ll take [1](quantity) [Chicken Curry](menu_item) [mild spice](modifier)
+    - Give me [4](quantity) [Wraps](menu_item) [no onions](modifier)
+    - I’d like [2](quantity) [Soups](menu_item) [low sodium](modifier)
+    - Prepare [5](quantity) [Pancakes](menu_item) [with maple syrup](modifier)
+    - I want to order a [Burger](menu_item)
+    - Can I get a [Pizza](menu_item)?
+    - Bring me [Sushi Rolls](menu_item)
+    - I need a [Salad](menu_item)
+    - Let me order a [Steak](menu_item)
+    - I’d like [Spring Rolls](menu_item)
+    - Give me [Milkshakes](menu_item)
+    - Prepare [Tacos](menu_item)
+    - I want [Cookies](menu_item)
+    - Bring me [Smoothies](menu_item)
+    - I want a [Burger](menu_item) [without tomatoes](modifier)
+    - Can I get a [Pizza](menu_item) [gluten-free](modifier)?
+    - Bring me [Sushi Rolls](menu_item) [with soy sauce](modifier)
+    - I need a [Salad](menu_item) [no dressing](modifier)
+    - Let me order a [Steak](menu_item) [medium-rare](modifier)
+    - I’d like [Pasta](menu_item) [no cheese](modifier)
+    - Give me a [Sandwich](menu_item) [no mayo](modifier)
+    - Prepare a [Chicken Curry](menu_item) [mild spice](modifier)
+    - I want [Fries](menu_item) [extra crispy](modifier)
+    - Bring me [Coffee](menu_item) [with oat milk](modifier)
+    - I want to order [2](quantity) [Burgers](menu_item)
+    - Can I get [1](quantity) [Pizza](menu_item)?
+    - Please bring me [3](quantity) [Sushi Rolls](menu_item)
+    - I need [4](quantity) [Salads](menu_item)
+    - Let me order [1](quantity) [Steak](menu_item)
+    - Give me [2](quantity) [Milkshakes](menu_item)
+    - I want [5](quantity) [Spring Rolls](menu_item)
+    - I’d like [6](quantity) [Cookies](menu_item)
+    - Bring me [3](quantity) [Tacos](menu_item)
+    - I’ll take [2](quantity) [Smoothies](menu_item)
+
+- intent: confirm_order
+  examples: |  
+    - Yes, confirm the order  
+    - Proceed with payment  
+    - Everything's correct, go ahead  
+    - That's accurate, confirm please  
+    - I agree, finalize the order  
+    - All good, proceed  
+    - Yep, that's right  
+    - Confirm now  
+    - Please process my order  
+    - Looks good, confirm it  
+    - Yes, I want to place the order  
+    - Okay, confirm the purchase  
+    - Go ahead and charge me  
+    - I’m ready to confirm  
+    - All set, lock it in  
+    - No changes needed, proceed  
+    - That works, finalize it  
+    - Details are correct, confirm  
+    - Absolutely, place the order  
+    - Confirm as is  
+    - Approved, go ahead  
+    - Perfect, proceed with the order  
+    - Yes, charge my card  
+    - Confirm and finish  
+    - This is correct, submit it    

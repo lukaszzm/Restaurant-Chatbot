@@ -3,11 +3,16 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - restaurant_hours
+  - opening_hours
   - list_menu
+  - place_order
+  - confirm_order
 
 entities:
   - datetime
+  - menu_item
+  - quantity
+  - modifier
 
 slots:
   datetime:
@@ -16,6 +21,24 @@ slots:
     mappings:
     - type: from_entity
       entity: datetime
+  menu_item:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: menu_item
+  quantity:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: quantity
+  modifier:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: modifier
 
 responses:
   utter_greet:
@@ -24,14 +47,15 @@ responses:
     - text: "Goodbye! We hope to see you again soon!"
   utter_ask_continue:
     - text: "Would you like anything else?"
-  utter_restaurant_hours:
-    - text: "We're open from {open_time} to {close_time} on {day}."
-  utter_menu:
-    - text: "Here's our menu:\n{menu_items}"
+  utter_ask_confirm:
+    - text: "Please confirm your order if everything is fine."
+  utter_order_complete:
+    - text: "Your order is submitted successfully! Thank you very much!"
 
 actions:
   - action_check_opening_hours
   - action_show_menu
+  - action_handle_order
 
 session_config:
   session_expiration_time: 60

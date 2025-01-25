@@ -1,3 +1,4 @@
 rasa==3.5.0
 rasa-sdk==3.5.0
 python-dateutil
+word2number
